@@ -47,7 +47,6 @@ namespace WindowsFormsApp1
             this.five = new System.Windows.Forms.Button();
             this.eight = new System.Windows.Forms.Button();
             this.clrSecondNumLine = new System.Windows.Forms.Button();
-            this.sign = new System.Windows.Forms.Button();
             this.one = new System.Windows.Forms.Button();
             this.four = new System.Windows.Forms.Button();
             this.seven = new System.Windows.Forms.Button();
@@ -58,8 +57,11 @@ namespace WindowsFormsApp1
             this.OutputBox.Location = new System.Drawing.Point(12, 12);
             this.OutputBox.Multiline = true;
             this.OutputBox.Name = "OutputBox";
+            this.OutputBox.ReadOnly = true;
             this.OutputBox.Size = new System.Drawing.Size(370, 81);
             this.OutputBox.TabIndex = 0;
+            this.OutputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.OutputBox.TextChanged += new System.EventHandler(this.OutputBox_TextChanged);
             // 
             // clrALL
             // 
@@ -70,6 +72,7 @@ namespace WindowsFormsApp1
             this.clrALL.TabIndex = 1;
             this.clrALL.Text = "CE";
             this.clrALL.UseVisualStyleBackColor = true;
+            this.clrALL.Click += new System.EventHandler(this.clrALL_Click);
             // 
             // minus
             // 
@@ -115,9 +118,9 @@ namespace WindowsFormsApp1
             // equals
             // 
             this.equals.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equals.Location = new System.Drawing.Point(294, 267);
+            this.equals.Location = new System.Drawing.Point(200, 267);
             this.equals.Name = "equals";
-            this.equals.Size = new System.Drawing.Size(88, 36);
+            this.equals.Size = new System.Drawing.Size(182, 36);
             this.equals.TabIndex = 7;
             this.equals.Text = "=";
             this.equals.UseVisualStyleBackColor = true;
@@ -125,12 +128,13 @@ namespace WindowsFormsApp1
             // dec
             // 
             this.dec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dec.Location = new System.Drawing.Point(200, 267);
+            this.dec.Location = new System.Drawing.Point(106, 267);
             this.dec.Name = "dec";
             this.dec.Size = new System.Drawing.Size(88, 36);
             this.dec.TabIndex = 8;
             this.dec.Text = ".";
             this.dec.UseVisualStyleBackColor = true;
+            this.dec.Click += new System.EventHandler(this.dec_Click);
             // 
             // three
             // 
@@ -141,6 +145,7 @@ namespace WindowsFormsApp1
             this.three.TabIndex = 9;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
+            this.three.Click += new System.EventHandler(this.buttonClick);
             // 
             // six
             // 
@@ -151,6 +156,7 @@ namespace WindowsFormsApp1
             this.six.TabIndex = 10;
             this.six.Text = "6";
             this.six.UseVisualStyleBackColor = true;
+            this.six.Click += new System.EventHandler(this.buttonClick);
             // 
             // nine
             // 
@@ -161,6 +167,7 @@ namespace WindowsFormsApp1
             this.nine.TabIndex = 11;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = true;
+            this.nine.Click += new System.EventHandler(this.buttonClick);
             // 
             // debayd
             // 
@@ -175,12 +182,13 @@ namespace WindowsFormsApp1
             // zero
             // 
             this.zero.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zero.Location = new System.Drawing.Point(106, 267);
+            this.zero.Location = new System.Drawing.Point(12, 267);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(88, 36);
             this.zero.TabIndex = 14;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = true;
+            this.zero.Click += new System.EventHandler(this.buttonClick);
             // 
             // two
             // 
@@ -191,6 +199,7 @@ namespace WindowsFormsApp1
             this.two.TabIndex = 15;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = true;
+            this.two.Click += new System.EventHandler(this.buttonClick);
             // 
             // five
             // 
@@ -201,6 +210,7 @@ namespace WindowsFormsApp1
             this.five.TabIndex = 16;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = true;
+            this.five.Click += new System.EventHandler(this.buttonClick);
             // 
             // eight
             // 
@@ -211,6 +221,7 @@ namespace WindowsFormsApp1
             this.eight.TabIndex = 17;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = true;
+            this.eight.Click += new System.EventHandler(this.buttonClick);
             // 
             // clrSecondNumLine
             // 
@@ -221,16 +232,7 @@ namespace WindowsFormsApp1
             this.clrSecondNumLine.TabIndex = 18;
             this.clrSecondNumLine.Text = "C";
             this.clrSecondNumLine.UseVisualStyleBackColor = true;
-            // 
-            // sign
-            // 
-            this.sign.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign.Location = new System.Drawing.Point(12, 267);
-            this.sign.Name = "sign";
-            this.sign.Size = new System.Drawing.Size(88, 36);
-            this.sign.TabIndex = 20;
-            this.sign.Text = "-/+";
-            this.sign.UseVisualStyleBackColor = true;
+            this.clrSecondNumLine.Click += new System.EventHandler(this.clrSecondNumLine_Click);
             // 
             // one
             // 
@@ -241,6 +243,7 @@ namespace WindowsFormsApp1
             this.one.TabIndex = 21;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = true;
+            this.one.Click += new System.EventHandler(this.buttonClick);
             // 
             // four
             // 
@@ -251,6 +254,7 @@ namespace WindowsFormsApp1
             this.four.TabIndex = 22;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = true;
+            this.four.Click += new System.EventHandler(this.buttonClick);
             // 
             // seven
             // 
@@ -261,6 +265,7 @@ namespace WindowsFormsApp1
             this.seven.TabIndex = 23;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = true;
+            this.seven.Click += new System.EventHandler(this.buttonClick);
             // 
             // Form1
             // 
@@ -270,7 +275,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.seven);
             this.Controls.Add(this.four);
             this.Controls.Add(this.one);
-            this.Controls.Add(this.sign);
             this.Controls.Add(this.clrSecondNumLine);
             this.Controls.Add(this.eight);
             this.Controls.Add(this.five);
@@ -317,7 +321,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button five;
         private System.Windows.Forms.Button eight;
         private System.Windows.Forms.Button clrSecondNumLine;
-        private System.Windows.Forms.Button sign;
         private System.Windows.Forms.Button one;
         private System.Windows.Forms.Button four;
         private System.Windows.Forms.Button seven;
