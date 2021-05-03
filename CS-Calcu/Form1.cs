@@ -12,10 +12,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        double result = 0;
         string operation = "";
-        int ind = 0;
-        string d = "";
+        int c = 0;
+        string a = "";
+        string b = "";
 
         public Form1()
         {
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         private void OutputBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         //codes for number buttons
@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
         private void buttonClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            d = button.Text;
 
             if(OutputBox.Text == "0" ||OutputBox.Text == "")
             {
@@ -69,13 +68,20 @@ namespace WindowsFormsApp1
             }
         }
 
-        //codes for delete last digit encoded
+        //codes for backspace button
 
-        /*private void back_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
-            ind = OutputBox.Text.LastIndexOf(d);
-            OutputBox.Text = OutputBox.Text.Remove(ind);
-        }*/
+            if (OutputBox.Text.Length > 0)
+            {
+                OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - 1, 1);
+
+                if (OutputBox.Text.Length == 0)
+                {
+                    OutputBox.Text = "0";
+                }
+            }
+        }
 
         //codes for sign
 
@@ -92,20 +98,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        //codes for reset button
-
-        private void clrALL_Click(object sender, EventArgs e)
-        {
-            OutputBox.Text = "0";
-            result = 0;
-        }
-
-        //codes for clear entry button
-
-        private void clrSecondNumLine_Click(object sender, EventArgs e)
-        {
-            OutputBox.Text = "0";
-        }
 
         //codes for statistical operation buttons
 
@@ -113,24 +105,27 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
-            result = Double.Parse(OutputBox.Text);
-            OutputBox.Text = "0";
+            a = OutputBox.Text;
+            c = (a + operation).Length;
+            OutputBox.Text = OutputBox.Text + operation;
         }
 
         //codes for equal button
 
         private void equals_Click(object sender, EventArgs e)
         {
+            b = OutputBox.Text.Substring(c);
+
             if (operation == "÷" || operation == "x" )
             {
                 if(operation == "÷")
                 {
-                    OutputBox.Text = (result / Double.Parse(OutputBox.Text)).ToString();
+                    OutputBox.Text = a + operation + b + "\n" + (Double.Parse(a) / Double.Parse(b)).ToString();
                 }
 
                 else
                 {
-                    OutputBox.Text = (result * Double.Parse(OutputBox.Text)).ToString();
+                    OutputBox.Text = a + operation + b + "\n" + (Double.Parse(a) * Double.Parse(b)).ToString();
                 }
             }
 
@@ -138,17 +133,29 @@ namespace WindowsFormsApp1
             {
                 if(operation=="+")
                 {
-                    OutputBox.Text = (result + Double.Parse(OutputBox.Text)).ToString();
+                    OutputBox.Text = a + operation + b + "\n" + (Double.Parse(a) + Double.Parse(b)).ToString();
                 }
 
                 else
                 {
-                    OutputBox.Text = (result - Double.Parse(OutputBox.Text)).ToString();
+                    OutputBox.Text = a + operation + b + "\n" + (Double.Parse(a) - Double.Parse(b)).ToString();
                 }
-                OutputBox.Text = "0";
             }
         }
 
+        //codes for clear entry button
 
+        private void clrSecondNumLine_Click(object sender, EventArgs e)
+        {
+            OutputBox.Text = a + operation;
+        }
+
+        //codes for reset button
+
+        private void clrALL_Click(object sender, EventArgs e)
+        {
+            OutputBox.Text = "0";
+            result = 0;
+        }
     }
 }
