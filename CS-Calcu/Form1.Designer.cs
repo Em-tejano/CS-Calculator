@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
             this.three.TabIndex = 9;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
-            this.three.Click += new System.EventHandler(this.buttonClick);
+            this.three.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // six
             // 
@@ -155,7 +155,7 @@ namespace WindowsFormsApp1
             this.six.TabIndex = 10;
             this.six.Text = "6";
             this.six.UseVisualStyleBackColor = true;
-            this.six.Click += new System.EventHandler(this.buttonClick);
+            this.six.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // nine
             // 
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
             this.nine.TabIndex = 11;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = true;
-            this.nine.Click += new System.EventHandler(this.buttonClick);
+            this.nine.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // debayd
             // 
@@ -188,7 +188,7 @@ namespace WindowsFormsApp1
             this.zero.TabIndex = 14;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = true;
-            this.zero.Click += new System.EventHandler(this.buttonClick);
+            this.zero.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // two
             // 
@@ -199,7 +199,7 @@ namespace WindowsFormsApp1
             this.two.TabIndex = 15;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = true;
-            this.two.Click += new System.EventHandler(this.buttonClick);
+            this.two.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // five
             // 
@@ -210,7 +210,7 @@ namespace WindowsFormsApp1
             this.five.TabIndex = 16;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = true;
-            this.five.Click += new System.EventHandler(this.buttonClick);
+            this.five.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // eight
             // 
@@ -221,7 +221,7 @@ namespace WindowsFormsApp1
             this.eight.TabIndex = 17;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = true;
-            this.eight.Click += new System.EventHandler(this.buttonClick);
+            this.eight.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // clrALL
             // 
@@ -243,7 +243,7 @@ namespace WindowsFormsApp1
             this.one.TabIndex = 21;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = true;
-            this.one.Click += new System.EventHandler(this.buttonClick);
+            this.one.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // four
             // 
@@ -254,7 +254,7 @@ namespace WindowsFormsApp1
             this.four.TabIndex = 22;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = true;
-            this.four.Click += new System.EventHandler(this.buttonClick);
+            this.four.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // seven
             // 
@@ -265,7 +265,7 @@ namespace WindowsFormsApp1
             this.seven.TabIndex = 23;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = true;
-            this.seven.Click += new System.EventHandler(this.buttonClick);
+            this.seven.Click += new System.EventHandler(this.NumBtnClick);
             // 
             // sign
             // 
