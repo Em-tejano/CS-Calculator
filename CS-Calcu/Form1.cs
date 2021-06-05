@@ -246,6 +246,7 @@ namespace WindowsFormsApp1
             }
             PrevOp = operation;
             OutputBox.Text = InByUser + "\n" + res;
+            PrevNum = Num;
             Num = "";
         }
 
