@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         string operation = "";
-        //int NumLength = 0;
+        string PrevOp = "";
         string Num = "";
         string res = "";
         string InByUser = "";
@@ -29,15 +29,10 @@ namespace WindowsFormsApp1
 
         }
 
-        //codes for number buttons
+        //For continuous input of number
 
-        private void NumBtnClick(object sender, EventArgs e)
+        public void CntnsInput()
         {
-            Button button = (Button)sender;
-            Num += button.Text;
-            InByUser += button.Text;
-
-            //For continuous input of number
             if (operation.Length > 0)
             {
                 try
@@ -141,6 +136,17 @@ namespace WindowsFormsApp1
                     operation = "";
                 }
             }
+        }
+
+        //codes for number buttons
+
+        public void NumBtnClick(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Num += button.Text;
+            InByUser += button.Text;
+            //res = "";
+            CntnsInput();
             OutputBox.Text = InByUser + "\n" + res;
         }
 
@@ -175,9 +181,26 @@ namespace WindowsFormsApp1
         {
             if (Num.Length > 0)
             {
-                OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - 1, 1);
+                //OutputBox.Text = OutputBox.Text.Remove(InByUser.Length - 1, 1);
                 Num = Num.Remove(Num.Length - 1, 1);
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
+                res = "";
+                if (Num.Length > 0)
+                {
+                    CntnsInput();
+                }
+                else
+                {
+                    if (OutputBox.Text.Equals(InByUser))
+                    {
+                        OutputBox.Text = InByUser;
+                    }
+                    else
+                    {
+                        OutputBox.Text = InByUser;
+                    }
+                }
+
 
                 if (OutputBox.Text.Length == 0)
                 {
@@ -212,24 +235,16 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
-            if (InByUser.EndsWith(operation))
+            if (!PrevOp.Equals("") && InByUser.EndsWith(PrevOp))
             {
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
                 InByUser += operation;
             }
             else
             {
-                if (InByUser.Contains(operation))
-                {
-                    InByUser += operation;
-                }
-                else 
-                {
-                    InByUser += operation;
-                    PrevNum = Num; 
-                }
+                InByUser += operation;
             }
-            //NumLength = InByUser.Length;
+            PrevOp = operation;
             OutputBox.Text = InByUser + "\n" + res;
             Num = "";
         }
@@ -287,7 +302,10 @@ namespace WindowsFormsApp1
         {
             if (Num.Length > 0)
             {
-            OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - Num.Length);
+                OutputBox.Text = InByUser.Remove(InByUser.Length - Num.Length);
+                InByUser = InByUser.Remove(InByUser.Length - Num.Length);
+                Num = "";
+                res = "";
             }
         }
 
@@ -296,7 +314,7 @@ namespace WindowsFormsApp1
         private void clrALL_Click(object sender, EventArgs e)
         {
             OutputBox.Text = "0";
-            res = "0";
+            res = "";
             Num = "";
             operation = "";
             //NumLength = 0;
