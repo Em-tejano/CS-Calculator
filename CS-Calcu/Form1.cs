@@ -146,7 +146,7 @@ namespace WindowsFormsApp1
             Num += button.Text;
             InByUser += button.Text;
             //res = "";
-            CntnsInput();
+            //CntnsInput();
             OutputBox.Text = InByUser + "\n" + res;
         }
 
@@ -175,36 +175,51 @@ namespace WindowsFormsApp1
             }
         }
 
+        //after backspace operation
+        private void Op()
+        {
+            if (operation == "÷")
+            {
+                operation = "x";
+            }
+            else if (operation == "x")
+            {
+                operation = "÷";
+            }
+            else if (operation == "+")
+            {
+                operation = "-";
+            }
+            else
+            {
+                operation = "+";
+            }
+        }
+
         //codes for backspace button
 
         private void back_Click(object sender, EventArgs e)
         {
             if (Num.Length > 0)
             {
+                Op();
+                CntnsInput();
+                Op();
                 //OutputBox.Text = OutputBox.Text.Remove(InByUser.Length - 1, 1);
                 Num = Num.Remove(Num.Length - 1, 1);
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
-                res = "";
-                if (Num.Length > 0)
-                {
-                    CntnsInput();
-                }
-                else
-                {
-                    if (OutputBox.Text.Equals(InByUser))
-                    {
-                        OutputBox.Text = InByUser;
-                    }
-                    else
-                    {
-                        OutputBox.Text = InByUser;
-                    }
-                }
-
+            }
+            else
+            {
+                InByUser = InByUser.Remove(InByUser.Length - 1, 1);
 
                 if (OutputBox.Text.Length == 0)
                 {
                     OutputBox.Text = "0";
+                }
+                else
+                {
+                    OutputBox.Text = InByUser;
                 }
             }
         }
@@ -235,6 +250,15 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
+            if (PrevNum.Equals(""))
+            {
+
+            }
+            else
+            {
+                CntnsInput();
+            }
+
             if (!PrevOp.Equals("") && InByUser.EndsWith(PrevOp))
             {
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);

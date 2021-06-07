@@ -60,9 +60,10 @@ namespace WindowsFormsApp1
             // clrSecondNumLine
             // 
             this.clrSecondNumLine.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrSecondNumLine.Location = new System.Drawing.Point(106, 70);
+            this.clrSecondNumLine.Location = new System.Drawing.Point(141, 86);
+            this.clrSecondNumLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clrSecondNumLine.Name = "clrSecondNumLine";
-            this.clrSecondNumLine.Size = new System.Drawing.Size(88, 36);
+            this.clrSecondNumLine.Size = new System.Drawing.Size(117, 44);
             this.clrSecondNumLine.TabIndex = 1;
             this.clrSecondNumLine.Text = "CE";
             this.clrSecondNumLine.UseVisualStyleBackColor = true;
@@ -71,9 +72,10 @@ namespace WindowsFormsApp1
             // minus
             // 
             this.minus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minus.Location = new System.Drawing.Point(294, 196);
+            this.minus.Location = new System.Drawing.Point(392, 241);
+            this.minus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.minus.Name = "minus";
-            this.minus.Size = new System.Drawing.Size(88, 36);
+            this.minus.Size = new System.Drawing.Size(117, 44);
             this.minus.TabIndex = 2;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
@@ -82,9 +84,10 @@ namespace WindowsFormsApp1
             // plus
             // 
             this.plus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plus.Location = new System.Drawing.Point(294, 238);
+            this.plus.Location = new System.Drawing.Point(392, 293);
+            this.plus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plus.Name = "plus";
-            this.plus.Size = new System.Drawing.Size(88, 36);
+            this.plus.Size = new System.Drawing.Size(117, 44);
             this.plus.TabIndex = 3;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
@@ -93,9 +96,10 @@ namespace WindowsFormsApp1
             // times
             // 
             this.times.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.times.Location = new System.Drawing.Point(294, 154);
+            this.times.Location = new System.Drawing.Point(392, 190);
+            this.times.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.times.Name = "times";
-            this.times.Size = new System.Drawing.Size(88, 36);
+            this.times.Size = new System.Drawing.Size(117, 44);
             this.times.TabIndex = 4;
             this.times.Text = "x";
             this.times.UseVisualStyleBackColor = true;
@@ -106,9 +110,10 @@ namespace WindowsFormsApp1
             this.back.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back.BackgroundImage")));
             this.back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.back.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back.Location = new System.Drawing.Point(294, 70);
+            this.back.Location = new System.Drawing.Point(392, 86);
+            this.back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(88, 36);
+            this.back.Size = new System.Drawing.Size(117, 44);
             this.back.TabIndex = 6;
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
@@ -116,9 +121,10 @@ namespace WindowsFormsApp1
             // equals
             // 
             this.equals.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equals.Location = new System.Drawing.Point(294, 280);
+            this.equals.Location = new System.Drawing.Point(392, 345);
+            this.equals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.equals.Name = "equals";
-            this.equals.Size = new System.Drawing.Size(88, 36);
+            this.equals.Size = new System.Drawing.Size(117, 44);
             this.equals.TabIndex = 7;
             this.equals.Text = "=";
             this.equals.UseVisualStyleBackColor = true;
@@ -127,9 +133,10 @@ namespace WindowsFormsApp1
             // dec
             // 
             this.dec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dec.Location = new System.Drawing.Point(200, 280);
+            this.dec.Location = new System.Drawing.Point(267, 345);
+            this.dec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dec.Name = "dec";
-            this.dec.Size = new System.Drawing.Size(88, 36);
+            this.dec.Size = new System.Drawing.Size(117, 44);
             this.dec.TabIndex = 8;
             this.dec.Text = ".";
             this.dec.UseVisualStyleBackColor = true;
@@ -138,9 +145,10 @@ namespace WindowsFormsApp1
             // three
             // 
             this.three.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.three.Location = new System.Drawing.Point(200, 238);
+            this.three.Location = new System.Drawing.Point(267, 293);
+            this.three.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.three.Name = "three";
-            this.three.Size = new System.Drawing.Size(88, 36);
+            this.three.Size = new System.Drawing.Size(117, 44);
             this.three.TabIndex = 9;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
@@ -149,9 +157,10 @@ namespace WindowsFormsApp1
             // six
             // 
             this.six.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.six.Location = new System.Drawing.Point(200, 196);
+            this.six.Location = new System.Drawing.Point(267, 241);
+            this.six.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.six.Name = "six";
-            this.six.Size = new System.Drawing.Size(88, 36);
+            this.six.Size = new System.Drawing.Size(117, 44);
             this.six.TabIndex = 10;
             this.six.Text = "6";
             this.six.UseVisualStyleBackColor = true;
@@ -160,9 +169,10 @@ namespace WindowsFormsApp1
             // nine
             // 
             this.nine.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nine.Location = new System.Drawing.Point(200, 154);
+            this.nine.Location = new System.Drawing.Point(267, 190);
+            this.nine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nine.Name = "nine";
-            this.nine.Size = new System.Drawing.Size(88, 36);
+            this.nine.Size = new System.Drawing.Size(117, 44);
             this.nine.TabIndex = 11;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = true;
@@ -171,9 +181,10 @@ namespace WindowsFormsApp1
             // debayd
             // 
             this.debayd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debayd.Location = new System.Drawing.Point(294, 112);
+            this.debayd.Location = new System.Drawing.Point(392, 138);
+            this.debayd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.debayd.Name = "debayd";
-            this.debayd.Size = new System.Drawing.Size(88, 36);
+            this.debayd.Size = new System.Drawing.Size(117, 44);
             this.debayd.TabIndex = 13;
             this.debayd.Text = "÷";
             this.debayd.UseVisualStyleBackColor = true;
@@ -182,9 +193,10 @@ namespace WindowsFormsApp1
             // zero
             // 
             this.zero.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zero.Location = new System.Drawing.Point(106, 280);
+            this.zero.Location = new System.Drawing.Point(141, 345);
+            this.zero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zero.Name = "zero";
-            this.zero.Size = new System.Drawing.Size(88, 36);
+            this.zero.Size = new System.Drawing.Size(117, 44);
             this.zero.TabIndex = 14;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = true;
@@ -193,9 +205,10 @@ namespace WindowsFormsApp1
             // two
             // 
             this.two.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.two.Location = new System.Drawing.Point(106, 238);
+            this.two.Location = new System.Drawing.Point(141, 293);
+            this.two.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.two.Name = "two";
-            this.two.Size = new System.Drawing.Size(88, 36);
+            this.two.Size = new System.Drawing.Size(117, 44);
             this.two.TabIndex = 15;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = true;
@@ -204,9 +217,10 @@ namespace WindowsFormsApp1
             // five
             // 
             this.five.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.five.Location = new System.Drawing.Point(106, 196);
+            this.five.Location = new System.Drawing.Point(141, 241);
+            this.five.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.five.Name = "five";
-            this.five.Size = new System.Drawing.Size(88, 36);
+            this.five.Size = new System.Drawing.Size(117, 44);
             this.five.TabIndex = 16;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = true;
@@ -215,9 +229,10 @@ namespace WindowsFormsApp1
             // eight
             // 
             this.eight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eight.Location = new System.Drawing.Point(106, 154);
+            this.eight.Location = new System.Drawing.Point(141, 190);
+            this.eight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eight.Name = "eight";
-            this.eight.Size = new System.Drawing.Size(88, 36);
+            this.eight.Size = new System.Drawing.Size(117, 44);
             this.eight.TabIndex = 17;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = true;
@@ -226,9 +241,10 @@ namespace WindowsFormsApp1
             // clrALL
             // 
             this.clrALL.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrALL.Location = new System.Drawing.Point(200, 70);
+            this.clrALL.Location = new System.Drawing.Point(267, 86);
+            this.clrALL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clrALL.Name = "clrALL";
-            this.clrALL.Size = new System.Drawing.Size(88, 36);
+            this.clrALL.Size = new System.Drawing.Size(117, 44);
             this.clrALL.TabIndex = 18;
             this.clrALL.Text = "C";
             this.clrALL.UseVisualStyleBackColor = true;
@@ -237,9 +253,10 @@ namespace WindowsFormsApp1
             // one
             // 
             this.one.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.one.Location = new System.Drawing.Point(12, 238);
+            this.one.Location = new System.Drawing.Point(16, 293);
+            this.one.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.one.Name = "one";
-            this.one.Size = new System.Drawing.Size(88, 36);
+            this.one.Size = new System.Drawing.Size(117, 44);
             this.one.TabIndex = 21;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = true;
@@ -248,9 +265,10 @@ namespace WindowsFormsApp1
             // four
             // 
             this.four.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.four.Location = new System.Drawing.Point(12, 196);
+            this.four.Location = new System.Drawing.Point(16, 241);
+            this.four.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.four.Name = "four";
-            this.four.Size = new System.Drawing.Size(88, 36);
+            this.four.Size = new System.Drawing.Size(117, 44);
             this.four.TabIndex = 22;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = true;
@@ -259,9 +277,10 @@ namespace WindowsFormsApp1
             // seven
             // 
             this.seven.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seven.Location = new System.Drawing.Point(12, 154);
+            this.seven.Location = new System.Drawing.Point(16, 190);
+            this.seven.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.seven.Name = "seven";
-            this.seven.Size = new System.Drawing.Size(88, 36);
+            this.seven.Size = new System.Drawing.Size(117, 44);
             this.seven.TabIndex = 23;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = true;
@@ -269,9 +288,10 @@ namespace WindowsFormsApp1
             // 
             // sign
             // 
-            this.sign.Location = new System.Drawing.Point(12, 280);
+            this.sign.Location = new System.Drawing.Point(16, 345);
+            this.sign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sign.Name = "sign";
-            this.sign.Size = new System.Drawing.Size(88, 36);
+            this.sign.Size = new System.Drawing.Size(117, 44);
             this.sign.TabIndex = 25;
             this.sign.Text = "-/+";
             this.sign.UseVisualStyleBackColor = true;
@@ -281,9 +301,10 @@ namespace WindowsFormsApp1
             // 
             this.OutputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OutputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutputBox.Location = new System.Drawing.Point(12, 9);
+            this.OutputBox.Location = new System.Drawing.Point(16, 11);
+            this.OutputBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OutputBox.Name = "OutputBox";
-            this.OutputBox.Size = new System.Drawing.Size(370, 55);
+            this.OutputBox.Size = new System.Drawing.Size(493, 67);
             this.OutputBox.TabIndex = 26;
             this.OutputBox.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.OutputBox.TextChanged += new System.EventHandler(this.OutputBox_TextChanged);
@@ -291,9 +312,10 @@ namespace WindowsFormsApp1
             // OneOver
             // 
             this.OneOver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OneOver.Location = new System.Drawing.Point(12, 112);
+            this.OneOver.Location = new System.Drawing.Point(16, 138);
+            this.OneOver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OneOver.Name = "OneOver";
-            this.OneOver.Size = new System.Drawing.Size(88, 36);
+            this.OneOver.Size = new System.Drawing.Size(117, 44);
             this.OneOver.TabIndex = 30;
             this.OneOver.Text = "1/x";
             this.OneOver.UseVisualStyleBackColor = true;
@@ -301,9 +323,10 @@ namespace WindowsFormsApp1
             // SqrRt
             // 
             this.SqrRt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SqrRt.Location = new System.Drawing.Point(200, 112);
+            this.SqrRt.Location = new System.Drawing.Point(267, 138);
+            this.SqrRt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SqrRt.Name = "SqrRt";
-            this.SqrRt.Size = new System.Drawing.Size(88, 36);
+            this.SqrRt.Size = new System.Drawing.Size(117, 44);
             this.SqrRt.TabIndex = 28;
             this.SqrRt.Text = "√x";
             this.SqrRt.UseVisualStyleBackColor = true;
@@ -312,9 +335,10 @@ namespace WindowsFormsApp1
             // 
             this.Sqr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Sqr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sqr.Location = new System.Drawing.Point(106, 112);
+            this.Sqr.Location = new System.Drawing.Point(141, 138);
+            this.Sqr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Sqr.Name = "Sqr";
-            this.Sqr.Size = new System.Drawing.Size(88, 36);
+            this.Sqr.Size = new System.Drawing.Size(117, 44);
             this.Sqr.TabIndex = 29;
             this.Sqr.Text = "X²";
             this.Sqr.UseVisualStyleBackColor = true;
@@ -322,18 +346,19 @@ namespace WindowsFormsApp1
             // Percent
             // 
             this.Percent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Percent.Location = new System.Drawing.Point(12, 70);
+            this.Percent.Location = new System.Drawing.Point(16, 86);
+            this.Percent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Percent.Name = "Percent";
-            this.Percent.Size = new System.Drawing.Size(88, 36);
+            this.Percent.Size = new System.Drawing.Size(117, 44);
             this.Percent.TabIndex = 31;
             this.Percent.Text = "%";
             this.Percent.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 325);
+            this.ClientSize = new System.Drawing.Size(525, 400);
             this.Controls.Add(this.Percent);
             this.Controls.Add(this.OneOver);
             this.Controls.Add(this.Sqr);
@@ -360,9 +385,10 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.minus);
             this.Controls.Add(this.clrSecondNumLine);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Opacity = 0.75D;
+            this.Opacity = 0.85D;
             this.Text = "Calculator";
             this.ResumeLayout(false);
 
