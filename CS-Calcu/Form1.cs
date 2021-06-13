@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
         string res = "";
         string InByUser = "";
         string PrevNum = "";
+        bool opp = true;
 
         public Form1()
         {
@@ -145,6 +146,15 @@ namespace WindowsFormsApp1
             Button button = (Button)sender;
             Num += button.Text;
             InByUser += button.Text;
+            if (opp)
+            {
+                CntnsInput();
+            }
+            else
+            {
+                res = "";
+                CntnsInput();
+            }
             //res = "";
             //CntnsInput();
             OutputBox.Text = InByUser + "\n" + res;
@@ -202,12 +212,12 @@ namespace WindowsFormsApp1
         {
             if (Num.Length > 0)
             {
-                Op();
-                CntnsInput();
-                Op();
                 //OutputBox.Text = OutputBox.Text.Remove(InByUser.Length - 1, 1);
                 Num = Num.Remove(Num.Length - 1, 1);
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
+                Op();
+                CntnsInput();
+                Op();
             }
             else
             {
@@ -250,13 +260,13 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
-            if (PrevNum.Equals(""))
+            if (res.Equals(""))
             {
-
+                opp = false;
             }
             else
             {
-                CntnsInput();
+                opp = true;
             }
 
             if (!PrevOp.Equals("") && InByUser.EndsWith(PrevOp))
