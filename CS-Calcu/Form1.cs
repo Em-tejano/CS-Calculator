@@ -360,5 +360,10 @@ namespace WindowsFormsApp1
             PrevNum = "";
         }
 
+        private void SqrRt_Click(object sender, EventArgs e)
+        {
+            double sqr = Math.Sqrt(double.Parse(Num));
+            OutputBox.Text = sqr.ToString();
+        }
     }
 }
