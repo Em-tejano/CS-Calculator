@@ -319,6 +319,7 @@ namespace WindowsFormsApp1
             this.Sqr.TabIndex = 29;
             this.Sqr.Text = "X²";
             this.Sqr.UseVisualStyleBackColor = true;
+            this.Sqr.Click += new System.EventHandler(this.Sqr_Click);
             // 
             // Percent
             // 

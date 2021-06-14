@@ -362,7 +362,13 @@ namespace WindowsFormsApp1
 
         private void SqrRt_Click(object sender, EventArgs e)
         {
-            double sqr = Math.Sqrt(double.Parse(Num));
+            double sqrt = Math.Sqrt(double.Parse(Num));
+            OutputBox.Text = sqrt.ToString();
+        }
+
+        private void Sqr_Click(object sender, EventArgs e)
+        {
+            double sqr = Math.Pow(double.Parse(Num), 2);
             OutputBox.Text = sqr.ToString();
         }
     }
