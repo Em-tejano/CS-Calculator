@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         string InByUser = "";
         string PrevNum = "";
         bool opp = true;
+        double ress;
 
         public Form1()
         {
@@ -327,11 +328,34 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            Num = "";
-            operation = "";
-            //NumLength = 0;
+            if (!ress.Equals(null))
+            {
+                if (operation == "÷")
+                {
+                    ress /= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                }
+                else if (operation == "x")
+                {
+                    ress *= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                }
+                else if (operation == "+")
+                {
+                    ress += ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                }
+                else
+                {
+                    ress -= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                }
+                ress = Math.Round(ress, 2);
+                OutputBox.Text = ress.ToString();
+            }
+            else
+            {
+                operation = "";
+                Num = "";
+                PrevNum = "";
+            }
             InByUser = "";
-            PrevNum = "";
         }
 
         //codes for clear entry button
@@ -355,7 +379,6 @@ namespace WindowsFormsApp1
             res = "";
             Num = "";
             operation = "";
-            //NumLength = 0;
             InByUser = "";
             PrevNum = "";
         }
@@ -376,6 +399,57 @@ namespace WindowsFormsApp1
         {
             double frctn = 1 / double.Parse(Num);
             OutputBox.Text = frctn.ToString();
+        }
+
+        private void Percent_Click(object sender, EventArgs e)
+        {
+            if (PrevNum.Equals(""))
+            {
+                OutputBox.Text = "0";
+            }
+            else
+            {
+                if (Num.Equals(""))
+                {
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                    }
+                }
+                else
+                {
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
+                    }
+                }
+                res = ress.ToString();
+                OutputBox.Text = res;
+            }
         }
     }
 }

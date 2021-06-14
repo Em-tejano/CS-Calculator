@@ -331,6 +331,7 @@ namespace WindowsFormsApp1
             this.Percent.TabIndex = 31;
             this.Percent.Text = "%";
             this.Percent.UseVisualStyleBackColor = true;
+            this.Percent.Click += new System.EventHandler(this.Percent_Click);
             // 
             // Form1
             // 
