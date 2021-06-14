@@ -297,6 +297,7 @@ namespace WindowsFormsApp1
             this.OneOver.TabIndex = 30;
             this.OneOver.Text = "1/x";
             this.OneOver.UseVisualStyleBackColor = true;
+            this.OneOver.Click += new System.EventHandler(this.OneOver_Click);
             // 
             // SqrRt
             // 

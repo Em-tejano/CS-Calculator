@@ -371,5 +371,11 @@ namespace WindowsFormsApp1
             double sqr = Math.Pow(double.Parse(Num), 2);
             OutputBox.Text = sqr.ToString();
         }
+
+        private void OneOver_Click(object sender, EventArgs e)
+        {
+            double frctn = 1 / double.Parse(Num);
+            OutputBox.Text = frctn.ToString();
+        }
     }
 }
