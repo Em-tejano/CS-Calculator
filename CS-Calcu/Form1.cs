@@ -148,6 +148,7 @@ namespace WindowsFormsApp1
             InByUser += button.Text;
             if (opp)
             {
+                res = "";
                 CntnsInput();
             }
             else
@@ -263,10 +264,13 @@ namespace WindowsFormsApp1
             if (res.Equals(""))
             {
                 opp = false;
+                PrevNum = Num;
             }
             else
             {
                 opp = true;
+                PrevNum = res;
+                res = "";
             }
 
             if (!PrevOp.Equals("") && InByUser.EndsWith(PrevOp))
@@ -280,7 +284,6 @@ namespace WindowsFormsApp1
             }
             PrevOp = operation;
             OutputBox.Text = InByUser + "\n" + res;
-            PrevNum = Num;
             Num = "";
         }
 
