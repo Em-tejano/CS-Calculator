@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Calculatr
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculatr));
             this.clrSecondNumLine = new System.Windows.Forms.Button();
             this.minus = new System.Windows.Forms.Button();
             this.plus = new System.Windows.Forms.Button();
@@ -333,7 +333,7 @@ namespace WindowsFormsApp1
             this.Percent.UseVisualStyleBackColor = true;
             this.Percent.Click += new System.EventHandler(this.Percent_Click);
             // 
-            // Form1
+            // Calculatr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -364,8 +364,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.minus);
             this.Controls.Add(this.clrSecondNumLine);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Calculatr";
             this.Opacity = 0.85D;
             this.Text = "Calculator";
             this.ResumeLayout(false);

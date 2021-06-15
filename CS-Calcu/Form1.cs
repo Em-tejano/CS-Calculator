@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Calculatr : Form
     {
         string operation = "";
         string PrevOp = "";
@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
         bool opp = true;
         double ress;
 
-        public Form1()
+        public Calculatr()
         {
             InitializeComponent();
         }
@@ -29,6 +29,46 @@ namespace WindowsFormsApp1
         private void OutputBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //for a result of two numbers
+        public void Rees()
+        {
+            if (operation == "÷" || operation == "x")
+            {
+                DivMul();
+            }
+
+            else
+            {
+                if (operation == "+")
+                {
+                    res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
+                    OutputBox.Text = InByUser + "\n" + res;
+                }
+
+                else
+                {
+                    res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
+                    OutputBox.Text = InByUser + "\n" + res;
+                }
+            }
+        }
+
+        //division and multiplication as the first buttons to be clicked
+        public void DivMul()
+        {
+            if (operation == "÷")
+            {
+                res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
+                OutputBox.Text = InByUser + "\n" + res;
+            }
+
+            else
+            {
+                res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
+                OutputBox.Text = InByUser + "\n" + res;
+            }
         }
 
         //For continuous input of number
@@ -73,35 +113,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        if (operation == "÷" || operation == "x")
-                        {
-                            if (operation == "÷")
-                            {
-                                res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
-                            }
-
-                            else
-                            {
-                                res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
-                            }
-                        }
-
-                        else
-                        {
-                            if (operation == "+")
-                            {
-                                res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
-                            }
-
-                            else
-                            {
-                                res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
-                            }
-                        }
+                        Rees();
                     }
                 }
                 catch (Exception)
@@ -111,17 +123,7 @@ namespace WindowsFormsApp1
                     {
                         PrevNum = "0";
                         InByUser = "0" + InByUser;
-                        if (operation == "÷")
-                        {
-                            res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
-                            OutputBox.Text = InByUser + "\n" + res;
-                        }
-
-                        else
-                        {
-                            res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
-                            OutputBox.Text = InByUser + "\n" + res;
-                        }
+                        DivMul();
                     }
                     else
                     {
@@ -132,7 +134,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            Num += operation;
+                            Num = operation + Num;
                         }
                     }
                     operation = "";
@@ -298,35 +300,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                if (operation == "÷" || operation == "x")
-                {
-                    if (operation == "÷")
-                    {
-                        res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
-                        OutputBox.Text = InByUser + "\n" + res;
-                    }
-
-                    else
-                    {
-                        res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
-                        OutputBox.Text = InByUser + "\n" + res;
-                    }
-                }
-
-                else
-                {
-                    if (operation == "+")
-                    {
-                        res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
-                        OutputBox.Text = InByUser + "\n" + res;
-                    }
-
-                    else
-                    {
-                        res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
-                        OutputBox.Text = InByUser + "\n" + res;
-                    }
-                }
+                Rees();
             }
             if (!ress.Equals(null))
             {
