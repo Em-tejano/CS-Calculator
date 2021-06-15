@@ -44,14 +44,13 @@ namespace WindowsFormsApp1
                 if (operation == "+")
                 {
                     res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
-                    OutputBox.Text = InByUser + "\n" + res;
                 }
 
                 else
                 {
                     res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
-                    OutputBox.Text = InByUser + "\n" + res;
                 }
+                OutputBox.Text = InByUser + "\n" + res;
             }
         }
 
@@ -61,14 +60,13 @@ namespace WindowsFormsApp1
             if (operation == "÷")
             {
                 res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
-                OutputBox.Text = InByUser + "\n" + res;
             }
 
             else
             {
                 res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
-                OutputBox.Text = InByUser + "\n" + res;
             }
+            OutputBox.Text = InByUser + "\n" + res;
         }
 
         //For continuous input of number
@@ -86,13 +84,11 @@ namespace WindowsFormsApp1
                             if (operation == "÷")
                             {
                                 res = (Double.Parse(res) / Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
                             }
 
                             else
                             {
                                 res = (Double.Parse(res) * Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
                             }
                         }
 
@@ -101,15 +97,14 @@ namespace WindowsFormsApp1
                             if (operation == "+")
                             {
                                 res = (Double.Parse(res) + Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
                             }
 
                             else
                             {
                                 res = (Double.Parse(res) - Double.Parse(Num)).ToString();
-                                OutputBox.Text = InByUser + "\n" + res;
                             }
                         }
+                        OutputBox.Text = InByUser + "\n" + res;
                     }
                     else
                     {
