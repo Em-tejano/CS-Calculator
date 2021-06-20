@@ -55,12 +55,19 @@ namespace WindowsFormsApp1
             this.SqrRt = new System.Windows.Forms.Button();
             this.Sqr = new System.Windows.Forms.Button();
             this.Percent = new System.Windows.Forms.Button();
+            this.MemorySubtract = new System.Windows.Forms.Button();
+            this.MemoryAdd = new System.Windows.Forms.Button();
+            this.MemoryRecall = new System.Windows.Forms.Button();
+            this.MemoryClear = new System.Windows.Forms.Button();
+            this.MemoryLister = new System.Windows.Forms.Button();
+            this.MemorySave = new System.Windows.Forms.Button();
+            this.MemoryList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // clrSecondNumLine
             // 
             this.clrSecondNumLine.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrSecondNumLine.Location = new System.Drawing.Point(106, 70);
+            this.clrSecondNumLine.Location = new System.Drawing.Point(106, 113);
             this.clrSecondNumLine.Name = "clrSecondNumLine";
             this.clrSecondNumLine.Size = new System.Drawing.Size(88, 36);
             this.clrSecondNumLine.TabIndex = 1;
@@ -71,7 +78,7 @@ namespace WindowsFormsApp1
             // minus
             // 
             this.minus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minus.Location = new System.Drawing.Point(294, 196);
+            this.minus.Location = new System.Drawing.Point(294, 239);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(88, 36);
             this.minus.TabIndex = 2;
@@ -82,7 +89,7 @@ namespace WindowsFormsApp1
             // plus
             // 
             this.plus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plus.Location = new System.Drawing.Point(294, 238);
+            this.plus.Location = new System.Drawing.Point(294, 281);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(88, 36);
             this.plus.TabIndex = 3;
@@ -93,7 +100,7 @@ namespace WindowsFormsApp1
             // times
             // 
             this.times.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.times.Location = new System.Drawing.Point(294, 154);
+            this.times.Location = new System.Drawing.Point(295, 197);
             this.times.Name = "times";
             this.times.Size = new System.Drawing.Size(88, 36);
             this.times.TabIndex = 4;
@@ -106,7 +113,7 @@ namespace WindowsFormsApp1
             this.back.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("back.BackgroundImage")));
             this.back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.back.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.back.Location = new System.Drawing.Point(294, 70);
+            this.back.Location = new System.Drawing.Point(294, 113);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(88, 36);
             this.back.TabIndex = 6;
@@ -116,7 +123,7 @@ namespace WindowsFormsApp1
             // equals
             // 
             this.equals.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equals.Location = new System.Drawing.Point(294, 280);
+            this.equals.Location = new System.Drawing.Point(294, 323);
             this.equals.Name = "equals";
             this.equals.Size = new System.Drawing.Size(88, 36);
             this.equals.TabIndex = 7;
@@ -127,7 +134,7 @@ namespace WindowsFormsApp1
             // dec
             // 
             this.dec.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dec.Location = new System.Drawing.Point(200, 280);
+            this.dec.Location = new System.Drawing.Point(200, 323);
             this.dec.Name = "dec";
             this.dec.Size = new System.Drawing.Size(88, 36);
             this.dec.TabIndex = 8;
@@ -138,7 +145,7 @@ namespace WindowsFormsApp1
             // three
             // 
             this.three.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.three.Location = new System.Drawing.Point(200, 238);
+            this.three.Location = new System.Drawing.Point(200, 281);
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(88, 36);
             this.three.TabIndex = 9;
@@ -149,7 +156,7 @@ namespace WindowsFormsApp1
             // six
             // 
             this.six.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.six.Location = new System.Drawing.Point(200, 196);
+            this.six.Location = new System.Drawing.Point(200, 239);
             this.six.Name = "six";
             this.six.Size = new System.Drawing.Size(88, 36);
             this.six.TabIndex = 10;
@@ -160,7 +167,7 @@ namespace WindowsFormsApp1
             // nine
             // 
             this.nine.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nine.Location = new System.Drawing.Point(200, 154);
+            this.nine.Location = new System.Drawing.Point(201, 197);
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(88, 36);
             this.nine.TabIndex = 11;
@@ -171,7 +178,7 @@ namespace WindowsFormsApp1
             // debayd
             // 
             this.debayd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debayd.Location = new System.Drawing.Point(294, 112);
+            this.debayd.Location = new System.Drawing.Point(294, 155);
             this.debayd.Name = "debayd";
             this.debayd.Size = new System.Drawing.Size(88, 36);
             this.debayd.TabIndex = 13;
@@ -182,7 +189,7 @@ namespace WindowsFormsApp1
             // zero
             // 
             this.zero.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zero.Location = new System.Drawing.Point(106, 280);
+            this.zero.Location = new System.Drawing.Point(106, 323);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(88, 36);
             this.zero.TabIndex = 14;
@@ -193,7 +200,7 @@ namespace WindowsFormsApp1
             // two
             // 
             this.two.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.two.Location = new System.Drawing.Point(106, 238);
+            this.two.Location = new System.Drawing.Point(106, 281);
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(88, 36);
             this.two.TabIndex = 15;
@@ -204,7 +211,7 @@ namespace WindowsFormsApp1
             // five
             // 
             this.five.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.five.Location = new System.Drawing.Point(106, 196);
+            this.five.Location = new System.Drawing.Point(106, 239);
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(88, 36);
             this.five.TabIndex = 16;
@@ -215,7 +222,7 @@ namespace WindowsFormsApp1
             // eight
             // 
             this.eight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eight.Location = new System.Drawing.Point(106, 154);
+            this.eight.Location = new System.Drawing.Point(107, 197);
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(88, 36);
             this.eight.TabIndex = 17;
@@ -226,7 +233,7 @@ namespace WindowsFormsApp1
             // clrALL
             // 
             this.clrALL.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clrALL.Location = new System.Drawing.Point(200, 70);
+            this.clrALL.Location = new System.Drawing.Point(200, 113);
             this.clrALL.Name = "clrALL";
             this.clrALL.Size = new System.Drawing.Size(88, 36);
             this.clrALL.TabIndex = 18;
@@ -237,7 +244,7 @@ namespace WindowsFormsApp1
             // one
             // 
             this.one.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.one.Location = new System.Drawing.Point(12, 238);
+            this.one.Location = new System.Drawing.Point(12, 281);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(88, 36);
             this.one.TabIndex = 21;
@@ -248,7 +255,7 @@ namespace WindowsFormsApp1
             // four
             // 
             this.four.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.four.Location = new System.Drawing.Point(12, 196);
+            this.four.Location = new System.Drawing.Point(12, 239);
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(88, 36);
             this.four.TabIndex = 22;
@@ -259,7 +266,7 @@ namespace WindowsFormsApp1
             // seven
             // 
             this.seven.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seven.Location = new System.Drawing.Point(12, 154);
+            this.seven.Location = new System.Drawing.Point(12, 197);
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(88, 36);
             this.seven.TabIndex = 23;
@@ -269,7 +276,7 @@ namespace WindowsFormsApp1
             // 
             // sign
             // 
-            this.sign.Location = new System.Drawing.Point(12, 280);
+            this.sign.Location = new System.Drawing.Point(12, 324);
             this.sign.Name = "sign";
             this.sign.Size = new System.Drawing.Size(88, 36);
             this.sign.TabIndex = 25;
@@ -291,7 +298,7 @@ namespace WindowsFormsApp1
             // OneOver
             // 
             this.OneOver.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OneOver.Location = new System.Drawing.Point(12, 112);
+            this.OneOver.Location = new System.Drawing.Point(12, 155);
             this.OneOver.Name = "OneOver";
             this.OneOver.Size = new System.Drawing.Size(88, 36);
             this.OneOver.TabIndex = 30;
@@ -302,7 +309,7 @@ namespace WindowsFormsApp1
             // SqrRt
             // 
             this.SqrRt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SqrRt.Location = new System.Drawing.Point(200, 112);
+            this.SqrRt.Location = new System.Drawing.Point(200, 155);
             this.SqrRt.Name = "SqrRt";
             this.SqrRt.Size = new System.Drawing.Size(88, 36);
             this.SqrRt.TabIndex = 28;
@@ -314,7 +321,7 @@ namespace WindowsFormsApp1
             // 
             this.Sqr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Sqr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sqr.Location = new System.Drawing.Point(106, 112);
+            this.Sqr.Location = new System.Drawing.Point(106, 155);
             this.Sqr.Name = "Sqr";
             this.Sqr.Size = new System.Drawing.Size(88, 36);
             this.Sqr.TabIndex = 29;
@@ -325,7 +332,7 @@ namespace WindowsFormsApp1
             // Percent
             // 
             this.Percent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Percent.Location = new System.Drawing.Point(12, 70);
+            this.Percent.Location = new System.Drawing.Point(12, 113);
             this.Percent.Name = "Percent";
             this.Percent.Size = new System.Drawing.Size(88, 36);
             this.Percent.TabIndex = 31;
@@ -333,11 +340,93 @@ namespace WindowsFormsApp1
             this.Percent.UseVisualStyleBackColor = true;
             this.Percent.Click += new System.EventHandler(this.Percent_Click);
             // 
+            // MemorySubtract
+            // 
+            this.MemorySubtract.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemorySubtract.Location = new System.Drawing.Point(199, 71);
+            this.MemorySubtract.Name = "MemorySubtract";
+            this.MemorySubtract.Size = new System.Drawing.Size(57, 36);
+            this.MemorySubtract.TabIndex = 32;
+            this.MemorySubtract.Text = "M-";
+            this.MemorySubtract.UseVisualStyleBackColor = true;
+            // 
+            // MemoryAdd
+            // 
+            this.MemoryAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryAdd.Location = new System.Drawing.Point(136, 71);
+            this.MemoryAdd.Name = "MemoryAdd";
+            this.MemoryAdd.Size = new System.Drawing.Size(57, 36);
+            this.MemoryAdd.TabIndex = 33;
+            this.MemoryAdd.Text = "M+";
+            this.MemoryAdd.UseVisualStyleBackColor = true;
+            // 
+            // MemoryRecall
+            // 
+            this.MemoryRecall.Enabled = false;
+            this.MemoryRecall.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryRecall.Location = new System.Drawing.Point(74, 71);
+            this.MemoryRecall.Name = "MemoryRecall";
+            this.MemoryRecall.Size = new System.Drawing.Size(56, 36);
+            this.MemoryRecall.TabIndex = 34;
+            this.MemoryRecall.Text = "MR";
+            this.MemoryRecall.UseVisualStyleBackColor = true;
+            // 
+            // MemoryClear
+            // 
+            this.MemoryClear.Enabled = false;
+            this.MemoryClear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryClear.Location = new System.Drawing.Point(12, 71);
+            this.MemoryClear.Name = "MemoryClear";
+            this.MemoryClear.Size = new System.Drawing.Size(56, 36);
+            this.MemoryClear.TabIndex = 35;
+            this.MemoryClear.Text = "MC";
+            this.MemoryClear.UseVisualStyleBackColor = true;
+            // 
+            // MemoryLister
+            // 
+            this.MemoryLister.Enabled = false;
+            this.MemoryLister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryLister.Location = new System.Drawing.Point(325, 71);
+            this.MemoryLister.Name = "MemoryLister";
+            this.MemoryLister.Size = new System.Drawing.Size(57, 36);
+            this.MemoryLister.TabIndex = 36;
+            this.MemoryLister.Text = "M";
+            this.MemoryLister.UseVisualStyleBackColor = true;
+            this.MemoryLister.Click += new System.EventHandler(this.MemoryLister_Click);
+            // 
+            // MemorySave
+            // 
+            this.MemorySave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemorySave.Location = new System.Drawing.Point(262, 71);
+            this.MemorySave.Name = "MemorySave";
+            this.MemorySave.Size = new System.Drawing.Size(57, 36);
+            this.MemorySave.TabIndex = 37;
+            this.MemorySave.Text = "MS";
+            this.MemorySave.UseVisualStyleBackColor = true;
+            this.MemorySave.Click += new System.EventHandler(this.MemorySave_Click);
+            // 
+            // MemoryList
+            // 
+            this.MemoryList.FormattingEnabled = true;
+            this.MemoryList.Location = new System.Drawing.Point(262, 113);
+            this.MemoryList.Name = "MemoryList";
+            this.MemoryList.Size = new System.Drawing.Size(120, 95);
+            this.MemoryList.TabIndex = 38;
+            this.MemoryList.Visible = false;
+            this.MemoryList.MouseLeave += new System.EventHandler(this.MemoryList_MouseLeave);
+            // 
             // Calculatr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 325);
+            this.ClientSize = new System.Drawing.Size(394, 367);
+            this.Controls.Add(this.MemoryList);
+            this.Controls.Add(this.MemorySave);
+            this.Controls.Add(this.MemoryLister);
+            this.Controls.Add(this.MemoryClear);
+            this.Controls.Add(this.MemoryRecall);
+            this.Controls.Add(this.MemoryAdd);
+            this.Controls.Add(this.MemorySubtract);
             this.Controls.Add(this.Percent);
             this.Controls.Add(this.OneOver);
             this.Controls.Add(this.Sqr);
@@ -399,6 +488,13 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button Sqr;
         private System.Windows.Forms.Button SqrRt;
         private System.Windows.Forms.Button Percent;
+        private System.Windows.Forms.Button MemorySubtract;
+        private System.Windows.Forms.Button MemoryAdd;
+        private System.Windows.Forms.Button MemoryRecall;
+        private System.Windows.Forms.Button MemoryClear;
+        private System.Windows.Forms.Button MemoryLister;
+        private System.Windows.Forms.Button MemorySave;
+        private System.Windows.Forms.ListBox MemoryList;
     }
 }
 

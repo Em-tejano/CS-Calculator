@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         string PrevNum = "";
         bool opp = true;
         double ress;
+        List<double> Memoria = new List<double>();
 
         public Calculatr()
         {
@@ -297,7 +298,7 @@ namespace WindowsFormsApp1
             {
                 Rees();
             }
-            if (!ress.Equals(null))
+            if (!ress.Equals(0))
             {
                 if (operation == "÷")
                 {
@@ -419,6 +420,40 @@ namespace WindowsFormsApp1
                 res = ress.ToString();
                 OutputBox.Text = res;
             }
+        }
+
+        private void MemorySave_Click(object sender, EventArgs e)
+        {
+            MemoryClear.Enabled = true;
+            MemoryRecall.Enabled = true;
+            MemoryLister.Enabled = true;
+            if (!ress.Equals(0))
+            {
+                Memoria.Add(ress);
+            }
+            else if (!res.Equals("0"))
+            {
+                Memoria.Add(double.Parse(res));
+            }
+            else
+            {
+                Memoria.Add(0);
+            }
+        }
+
+        private void MemoryLister_Click(object sender, EventArgs e)
+        {
+            MemoryList.Visible = true;
+            for (int i = 0; i < Memoria.Count; i++)
+            {
+                MemoryList.Items.Add(Memoria[i]);
+            }
+        }
+
+        private void MemoryList_MouseLeave(object sender, EventArgs e)
+        {
+            MemoryList.Items.Clear();
+            MemoryList.Visible = false;
         }
     }
 }
