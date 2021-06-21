@@ -349,6 +349,7 @@ namespace WindowsFormsApp1
             this.MemorySubtract.TabIndex = 32;
             this.MemorySubtract.Text = "M-";
             this.MemorySubtract.UseVisualStyleBackColor = true;
+            this.MemorySubtract.Click += new System.EventHandler(this.MemoryAddSub_Click);
             // 
             // MemoryAdd
             // 
@@ -359,6 +360,7 @@ namespace WindowsFormsApp1
             this.MemoryAdd.TabIndex = 33;
             this.MemoryAdd.Text = "M+";
             this.MemoryAdd.UseVisualStyleBackColor = true;
+            this.MemoryAdd.Click += new System.EventHandler(this.MemoryAddSub_Click);
             // 
             // MemoryRecall
             // 

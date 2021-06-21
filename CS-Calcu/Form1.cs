@@ -429,24 +429,44 @@ namespace WindowsFormsApp1
             MemoryLister.Enabled = true;
             if (!ress.Equals(0))
             {
-                Memoria.Add(ress);
+                Memoria.Insert(0, ress);
             }
-            else if (!res.Equals("0"))
+            else if (!res.Equals(""))
             {
-                Memoria.Add(double.Parse(res));
+                Memoria.Insert(0, double.Parse(res));
+            }
+            else if (!OutputBox.Text.Equals(""))
+            {
+                bool isNumber = int.TryParse(OutputBox.Text, out _);
+                if (isNumber)
+                {
+                    Memoria.Insert(0, double.Parse(OutputBox.Text));
+                }
+                else
+                {
+                    Memoria.Insert(0, 0);
+                }
             }
             else
             {
-                Memoria.Add(0);
+                Memoria.Insert(0, 0);
             }
         }
 
         private void MemoryLister_Click(object sender, EventArgs e)
         {
-            MemoryList.Visible = true;
-            for (int i = 0; i < Memoria.Count; i++)
+            if (MemoryList.Visible)
             {
-                MemoryList.Items.Add(Memoria[i]);
+                MemoryList.Visible = false;
+                MemoryList.Items.Clear();
+            }
+            else
+            {
+                MemoryList.Visible = true;
+                for (int i = Memoria.Count; i > 0; i--)
+                {
+                    MemoryList.Items.Add(Memoria[i - 1]);
+                }
             }
         }
 
@@ -454,6 +474,81 @@ namespace WindowsFormsApp1
         {
             MemoryList.Items.Clear();
             MemoryList.Visible = false;
+        }
+
+        private void MemoryAddSub_Click(object sender, EventArgs e)
+        {
+            MemoryLister.Enabled = true;
+            Button button = (Button)sender;
+            if (!ress.Equals(0))
+            {
+                if (button.Text.Equals("M+"))
+                {
+                    Memoria.Insert(0, Memoria.First() + ress);
+                    Memoria.RemoveAt(1);
+                }
+                else
+                {
+                    Memoria.Insert(0, Memoria.First() - ress);
+                    Memoria.RemoveAt(1);
+                }
+            }
+            else if (!res.Equals(""))
+            {
+                if (button.Text.Equals("M+"))
+                {
+                    Memoria.Insert(0, Memoria.First() + double.Parse(res));
+                    Memoria.RemoveAt(1);
+                }
+                else
+                {
+                    Memoria.Insert(0, Memoria.First() - double.Parse(res));
+                    Memoria.RemoveAt(1);
+                }
+            }
+            else if (!OutputBox.Text.Equals(""))
+            {
+                bool isNumber = int.TryParse(OutputBox.Text, out _);
+                if (isNumber)
+                {
+                    if (Memoria.Count == 0)
+                    {
+                        if (button.Text.Equals("M+"))
+                        {
+                            Memoria.Insert(0, double.Parse(OutputBox.Text));
+                        }
+                        else
+                        {
+                            Memoria.Insert(0, double.Parse(OutputBox.Text));
+                        }
+                    }
+                    else
+                    {
+                        if (button.Text.Equals("M+"))
+                        {
+                            Memoria.Insert(0, Memoria.First() + double.Parse(OutputBox.Text));
+                            Memoria.RemoveAt(1);
+                        }
+                        else
+                        {
+                            Memoria.Insert(0, Memoria.First() - double.Parse(OutputBox.Text));
+                            Memoria.RemoveAt(1);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (Memoria.Count == 0)
+                {
+                    Memoria.Insert(0, 0);
+                }
+                else
+                {
+                    Memoria.Insert(0, 0);
+                    Memoria.RemoveAt(1);
+                }
+            }
         }
     }
 }
