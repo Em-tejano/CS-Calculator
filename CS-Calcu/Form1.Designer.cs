@@ -372,6 +372,7 @@ namespace WindowsFormsApp1
             this.MemoryRecall.TabIndex = 34;
             this.MemoryRecall.Text = "MR";
             this.MemoryRecall.UseVisualStyleBackColor = true;
+            this.MemoryRecall.Click += new System.EventHandler(this.MemoryRecall_Click);
             // 
             // MemoryClear
             // 
@@ -409,12 +410,15 @@ namespace WindowsFormsApp1
             // 
             // MemoryList
             // 
+            this.MemoryList.Font = new System.Drawing.Font("Arial", 13.5F);
             this.MemoryList.FormattingEnabled = true;
+            this.MemoryList.ItemHeight = 21;
             this.MemoryList.Location = new System.Drawing.Point(262, 113);
             this.MemoryList.Name = "MemoryList";
-            this.MemoryList.Size = new System.Drawing.Size(120, 95);
+            this.MemoryList.Size = new System.Drawing.Size(120, 88);
             this.MemoryList.TabIndex = 38;
             this.MemoryList.Visible = false;
+            this.MemoryList.DoubleClick += new System.EventHandler(this.MemCall_DoubleClick);
             this.MemoryList.MouseLeave += new System.EventHandler(this.MemoryList_MouseLeave);
             // 
             // Calculatr

@@ -463,9 +463,9 @@ namespace WindowsFormsApp1
             else
             {
                 MemoryList.Visible = true;
-                for (int i = Memoria.Count; i > 0; i--)
+                for (int i = 0; i < Memoria.Count; i++)
                 {
-                    MemoryList.Items.Add(Memoria[i - 1]);
+                    MemoryList.Items.Add(Memoria[i]);
                 }
             }
         }
@@ -549,6 +549,16 @@ namespace WindowsFormsApp1
                     Memoria.RemoveAt(1);
                 }
             }
+        }
+
+        private void MemCall_DoubleClick(object sender, EventArgs e)
+        {
+            OutputBox.Text = MemoryList.SelectedItem.ToString();
+        }
+
+        private void MemoryRecall_Click(object sender, EventArgs e)
+        {
+            OutputBox.Text = Memoria.First().ToString();
         }
     }
 }
