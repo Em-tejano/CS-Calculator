@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         bool opp = true;
         double ress;
         List<double> Memoria = new List<double>();
+        bool MemSave_Clck = false;
 
         public Calculatr()
         {
@@ -145,19 +146,25 @@ namespace WindowsFormsApp1
             Button button = (Button)sender;
             Num += button.Text;
             InByUser += button.Text;
-            if (opp)
-            {
-                res = "";
-                CntnsInput();
-            }
-            else
-            {
-                res = "";
-                CntnsInput();
-            }
-            //res = "";
-            //CntnsInput();
+            //if (opp)
+            //{
+            //    res = "";
+            //    CntnsInput();
+            //}
+            //else
+            //{
+            //    res = "";
+            //    CntnsInput();
+            //}
+            res = "";
+            CntnsInput();
             OutputBox.Text = InByUser + "\n" + res;
+
+            if (MemSave_Clck)
+            {
+                OutputBox.Text = Num;
+                MemSave_Clck = false;
+            }
         }
 
         //codes for decimal button
@@ -260,14 +267,26 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
+
+            if (!Memoria.Count.Equals(0) && Num.Equals("") && !OutputBox.Text.Equals(""))
+            {
+                Num = Memoria.First().ToString();
+                InByUser += Memoria.First().ToString();
+            }
+
+            if (MemSave_Clck)
+            {
+                MemSave_Clck = false;
+            }
+
             if (res.Equals(""))
             {
-                opp = false;
+                //opp = false;
                 PrevNum = Num;
             }
             else
             {
-                opp = true;
+                //opp = true;
                 PrevNum = res;
                 res = "";
             }
@@ -444,13 +463,16 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    Memoria.Insert(0, 0);
+                    Memoria.Insert(0, double.Parse(Num));
                 }
             }
             else
             {
                 Memoria.Insert(0, 0);
             }
+            MemSave_Clck = true;
+            Num = "";
+            InByUser = "";
         }
 
         private void MemoryLister_Click(object sender, EventArgs e)
@@ -559,6 +581,11 @@ namespace WindowsFormsApp1
         private void MemoryRecall_Click(object sender, EventArgs e)
         {
             OutputBox.Text = Memoria.First().ToString();
+        }
+
+        private void MemoryClear_Click(object sender, EventArgs e)
+        {
+            Memoria.Clear();
         }
     }
 }

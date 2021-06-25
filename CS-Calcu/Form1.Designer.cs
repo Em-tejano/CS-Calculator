@@ -384,6 +384,7 @@ namespace WindowsFormsApp1
             this.MemoryClear.TabIndex = 35;
             this.MemoryClear.Text = "MC";
             this.MemoryClear.UseVisualStyleBackColor = true;
+            this.MemoryClear.Click += new System.EventHandler(this.MemoryClear_Click);
             // 
             // MemoryLister
             // 
