@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
         string res = "";
         string InByUser = "";
         string PrevNum = "";
-        bool opp = true;
         double ress;
         List<double> Memoria = new List<double>();
         bool MemSave_Clck = false;
@@ -146,16 +145,6 @@ namespace WindowsFormsApp1
             Button button = (Button)sender;
             Num += button.Text;
             InByUser += button.Text;
-            //if (opp)
-            //{
-            //    res = "";
-            //    CntnsInput();
-            //}
-            //else
-            //{
-            //    res = "";
-            //    CntnsInput();
-            //}
             res = "";
             CntnsInput();
             OutputBox.Text = InByUser + "\n" + res;
@@ -219,7 +208,6 @@ namespace WindowsFormsApp1
         {
             if (Num.Length > 0)
             {
-                //OutputBox.Text = OutputBox.Text.Remove(InByUser.Length - 1, 1);
                 Num = Num.Remove(Num.Length - 1, 1);
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
                 Op();
@@ -281,12 +269,10 @@ namespace WindowsFormsApp1
 
             if (res.Equals(""))
             {
-                //opp = false;
                 PrevNum = Num;
             }
             else
             {
-                //opp = true;
                 PrevNum = res;
                 res = "";
             }
