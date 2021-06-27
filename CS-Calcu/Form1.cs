@@ -21,6 +21,8 @@ namespace WindowsFormsApp1
         double ress;
         List<double> Memoria = new List<double>();
         bool MemSave_Clck = false;
+        ArithmeticClass Arith = new ArithmeticClass();
+        MemoryClass MemFunc = new MemoryClass();
 
         public Calculatr()
         {
@@ -32,112 +34,6 @@ namespace WindowsFormsApp1
 
         }
 
-        //for a result of two numbers
-        public void Rees()
-        {
-            if (operation == "÷" || operation == "x")
-            {
-                DivMul();
-            }
-
-            else
-            {
-                if (operation == "+")
-                {
-                    res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
-                }
-
-                else
-                {
-                    res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
-                }
-                OutputBox.Text = InByUser + "\n" + res;
-            }
-        }
-
-        //division and multiplication as the first buttons to be clicked
-        public void DivMul()
-        {
-            if (operation == "÷")
-            {
-                res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
-            }
-
-            else
-            {
-                res = (Double.Parse(PrevNum) * Double.Parse(Num)).ToString();
-            }
-            OutputBox.Text = InByUser + "\n" + res;
-        }
-
-        //For continuous input of number
-
-        public void CntnsInput()
-        {
-            if (operation.Length > 0)
-            {
-                try
-                {
-                    if (res.Length > 0)
-                    {
-                        if (operation == "÷" || operation == "x")
-                        {
-                            if (operation == "÷")
-                            {
-                                res = (Double.Parse(res) / Double.Parse(Num)).ToString();
-                            }
-
-                            else
-                            {
-                                res = (Double.Parse(res) * Double.Parse(Num)).ToString();
-                            }
-                        }
-
-                        else
-                        {
-                            if (operation == "+")
-                            {
-                                res = (Double.Parse(res) + Double.Parse(Num)).ToString();
-                            }
-
-                            else
-                            {
-                                res = (Double.Parse(res) - Double.Parse(Num)).ToString();
-                            }
-                        }
-                        OutputBox.Text = InByUser + "\n" + res;
-                    }
-                    else
-                    {
-                        Rees();
-                    }
-                }
-                catch (Exception)
-                {
-                    //if operation is accidentally clicked or intentionally clicked
-                    if (operation == "÷" || operation == "x")
-                    {
-                        PrevNum = "0";
-                        InByUser = "0" + InByUser;
-                        DivMul();
-                    }
-                    else
-                    {
-                        //if add and subtract used as number sign
-                        if (operation == "+")
-                        {
-                            Num = "";
-                        }
-                        else
-                        {
-                            Num = operation + Num;
-                        }
-                    }
-                    operation = "";
-                }
-            }
-        }
-
         //codes for number buttons
 
         public void NumBtnClick(object sender, EventArgs e)
@@ -145,8 +41,12 @@ namespace WindowsFormsApp1
             Button button = (Button)sender;
             Num += button.Text;
             InByUser += button.Text;
+            Arith.Num = Num;
+            Arith.InByUser = InByUser;
             res = "";
-            CntnsInput();
+            Arith.res = res;
+            Arith.CntnsInput();
+            res = Arith.res;
             OutputBox.Text = InByUser + "\n" + res;
 
             if (MemSave_Clck)
@@ -179,27 +79,8 @@ namespace WindowsFormsApp1
                     InByUser += ".";
                 }
             }
-        }
-
-        //after backspace operation
-        private void Op()
-        {
-            if (operation == "÷")
-            {
-                operation = "x";
-            }
-            else if (operation == "x")
-            {
-                operation = "÷";
-            }
-            else if (operation == "+")
-            {
-                operation = "-";
-            }
-            else
-            {
-                operation = "+";
-            }
+            Arith.Num = Num;
+            Arith.InByUser = InByUser;
         }
 
         //codes for backspace button
@@ -210,13 +91,16 @@ namespace WindowsFormsApp1
             {
                 Num = Num.Remove(Num.Length - 1, 1);
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
-                Op();
-                CntnsInput();
-                Op();
+                Arith.Num = Num;
+                Arith.InByUser = InByUser;
+                Arith.Op();
+                Arith.CntnsInput();
+                Arith.Op();
             }
             else
             {
                 InByUser = InByUser.Remove(InByUser.Length - 1, 1);
+                Arith.InByUser = InByUser;
 
                 if (OutputBox.Text.Length == 0)
                 {
@@ -238,6 +122,8 @@ namespace WindowsFormsApp1
                 OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - Num.Length, 1);
                 InByUser = InByUser.Remove(InByUser.Length - Num.Length, 1);
                 Num = Num.Substring(1);
+                Arith.Num = Num;
+                Arith.InByUser = InByUser;
             }
 
             else
@@ -245,6 +131,8 @@ namespace WindowsFormsApp1
                 OutputBox.Text = OutputBox.Text.Insert(OutputBox.Text.Length - Num.Length, "-");
                 InByUser = InByUser.Insert(InByUser.Length - Num.Length, "-");
                 Num = "-" + Num;
+                Arith.Num = Num;
+                Arith.InByUser = InByUser;
             }
         }
 
@@ -255,6 +143,7 @@ namespace WindowsFormsApp1
         {
             Button button = (Button)sender;
             operation = button.Text;
+            Arith.operation = operation;
 
             if (!Memoria.Count.Equals(0) && Num.Equals("") && !OutputBox.Text.Equals(""))
             {
@@ -289,6 +178,7 @@ namespace WindowsFormsApp1
             PrevOp = operation;
             OutputBox.Text = InByUser + "\n" + res;
             Num = "";
+            Arith.PrevNum = PrevNum;
         }
 
         //codes for equal button
@@ -301,7 +191,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Rees();
+                Arith.Rees();
             }
             if (!ress.Equals(0))
             {
@@ -432,30 +322,7 @@ namespace WindowsFormsApp1
             MemoryClear.Enabled = true;
             MemoryRecall.Enabled = true;
             MemoryLister.Enabled = true;
-            if (!ress.Equals(0))
-            {
-                Memoria.Insert(0, ress);
-            }
-            else if (!res.Equals(""))
-            {
-                Memoria.Insert(0, double.Parse(res));
-            }
-            else if (!OutputBox.Text.Equals(""))
-            {
-                bool isNumber = int.TryParse(OutputBox.Text, out _);
-                if (isNumber)
-                {
-                    Memoria.Insert(0, double.Parse(OutputBox.Text));
-                }
-                else
-                {
-                    Memoria.Insert(0, double.Parse(Num));
-                }
-            }
-            else
-            {
-                Memoria.Insert(0, 0);
-            }
+            MemFunc.MemorySave();
             MemSave_Clck = true;
             Num = "";
             InByUser = "";
