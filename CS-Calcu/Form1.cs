@@ -12,14 +12,10 @@ namespace WindowsFormsApp1
 {
     public partial class Calculatr : Form
     {
-        string operation = "";
         string PrevOp = "";
-        string Num = "";
         string res = "";
-        string InByUser = "";
         string PrevNum = "";
         double ress;
-        List<double> Memoria = new List<double>();
         bool MemSave_Clck = false;
         ArithmeticClass Arith = new ArithmeticClass();
         MemoryClass MemFunc = new MemoryClass();
@@ -39,19 +35,17 @@ namespace WindowsFormsApp1
         public void NumBtnClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            Num += button.Text;
-            InByUser += button.Text;
-            Arith.Num = Num;
-            Arith.InByUser = InByUser;
+            Arith.Num += button.Text;
+            Arith.InByUser += button.Text;
             res = "";
             Arith.res = res;
             Arith.CntnsInput();
             res = Arith.res;
-            OutputBox.Text = InByUser + "\n" + res;
+            OutputBox.Text = Arith.InByUser + "\n" + res;
 
             if (MemSave_Clck)
             {
-                OutputBox.Text = Num;
+                OutputBox.Text = Arith.Num;
                 MemSave_Clck = false;
             }
         }
@@ -60,47 +54,42 @@ namespace WindowsFormsApp1
 
         private void dec_Click(object sender, EventArgs e)
         {
-            if (Num.Contains("."))
+            if (Arith.Num.Contains("."))
             {
 
             }
 
             else
             {
-                if (Num == "")
+                if (Arith.Num == "")
                 {
-                    Num = "0.";
-                    InByUser += "0.";
+                    Arith.Num = "0.";
+                    Arith.InByUser += "0.";
                 }
 
                 else
                 {
-                    Num += ".";
-                    InByUser += ".";
+                    Arith.Num += ".";
+                    Arith.InByUser += ".";
                 }
             }
-            Arith.Num = Num;
-            Arith.InByUser = InByUser;
         }
 
         //codes for backspace button
 
         private void back_Click(object sender, EventArgs e)
         {
-            if (Num.Length > 0)
+            if (Arith.Num.Length > 0)
             {
-                Num = Num.Remove(Num.Length - 1, 1);
-                InByUser = InByUser.Remove(InByUser.Length - 1, 1);
-                Arith.Num = Num;
-                Arith.InByUser = InByUser;
+                Arith.Num = Arith.Num.Remove(Arith.Num.Length - 1, 1);
+                Arith.InByUser = Arith.InByUser.Remove(Arith.InByUser.Length - 1, 1);
                 Arith.Op();
                 Arith.CntnsInput();
                 Arith.Op();
             }
             else
             {
-                InByUser = InByUser.Remove(InByUser.Length - 1, 1);
-                Arith.InByUser = InByUser;
+                Arith.InByUser = Arith.InByUser.Remove(Arith.InByUser.Length - 1, 1);
 
                 if (OutputBox.Text.Length == 0)
                 {
@@ -108,7 +97,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    OutputBox.Text = InByUser;
+                    OutputBox.Text = Arith.InByUser;
                 }
             }
         }
@@ -117,22 +106,18 @@ namespace WindowsFormsApp1
 
         private void sign_Click(object sender, EventArgs e)
         {
-            if (Num.Contains("-"))
+            if (Arith.Num.Contains("-"))
             {
-                OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - Num.Length, 1);
-                InByUser = InByUser.Remove(InByUser.Length - Num.Length, 1);
-                Num = Num.Substring(1);
-                Arith.Num = Num;
-                Arith.InByUser = InByUser;
+                OutputBox.Text = OutputBox.Text.Remove(OutputBox.Text.Length - Arith.Num.Length, 1);
+                Arith.InByUser = Arith.InByUser.Remove(Arith.InByUser.Length - Arith.Num.Length, 1);
+                Arith.Num = Arith.Num.Substring(1);
             }
 
             else
             {
-                OutputBox.Text = OutputBox.Text.Insert(OutputBox.Text.Length - Num.Length, "-");
-                InByUser = InByUser.Insert(InByUser.Length - Num.Length, "-");
-                Num = "-" + Num;
-                Arith.Num = Num;
-                Arith.InByUser = InByUser;
+                OutputBox.Text = OutputBox.Text.Insert(OutputBox.Text.Length - Arith.Num.Length, "-");
+                Arith.InByUser = Arith.InByUser.Insert(Arith.InByUser.Length - Arith.Num.Length, "-");
+                Arith.Num = "-" + Arith.Num;
             }
         }
 
@@ -142,13 +127,12 @@ namespace WindowsFormsApp1
         private void OperationClick(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            operation = button.Text;
-            Arith.operation = operation;
+            Arith.operation = button.Text;
 
-            if (!Memoria.Count.Equals(0) && Num.Equals("") && !OutputBox.Text.Equals(""))
+            if (!MemFunc.Memoria.Count.Equals(0) && Arith.Num.Equals("") && !OutputBox.Text.Equals(""))
             {
-                Num = Memoria.First().ToString();
-                InByUser += Memoria.First().ToString();
+                Arith.Num = MemFunc.Memoria.First().ToString();
+                Arith.InByUser += MemFunc.Memoria.First().ToString();
             }
 
             if (MemSave_Clck)
@@ -158,7 +142,7 @@ namespace WindowsFormsApp1
 
             if (res.Equals(""))
             {
-                PrevNum = Num;
+                PrevNum = Arith.Num;
             }
             else
             {
@@ -166,21 +150,20 @@ namespace WindowsFormsApp1
                 res = "";
             }
 
-            if (!PrevOp.Equals("") && InByUser.EndsWith(PrevOp))
+            if (!PrevOp.Equals("") && Arith.InByUser.EndsWith(PrevOp))
             {
-                InByUser = InByUser.Remove(InByUser.Length - 1, 1);
-                InByUser += operation;
+                Arith.InByUser = Arith.InByUser.Remove(Arith.InByUser.Length - 1, 1);
+                Arith.InByUser += Arith.operation;
             }
             else
             {
-                InByUser += operation;
+                Arith.InByUser += Arith.operation;
             }
-            PrevOp = operation;
-            OutputBox.Text = InByUser + "\n" + res;
-            Num = "";
+            PrevOp = Arith.operation;
+            OutputBox.Text = Arith.InByUser + "\n" + res;
             Arith.Num = "";
+
             Arith.PrevNum = PrevNum;
-            Arith.InByUser = InByUser;
         }
 
         //codes for equal button
@@ -203,26 +186,24 @@ namespace WindowsFormsApp1
             }
             else
             {
-                operation = "";
-                Num = "";
+                Arith.operation = "";
+                Arith.Num = "";
                 PrevNum = "";
             }
-            InByUser = "";
+            Arith.InByUser = "";
         }
 
         //codes for clear entry button
 
         private void clrSecondNumLine_Click(object sender, EventArgs e)
         {
-            if (Num.Length > 0)
+            if (Arith.Num.Length > 0)
             {
-                OutputBox.Text = InByUser.Remove(InByUser.Length - Num.Length);
-                InByUser = InByUser.Remove(InByUser.Length - Num.Length);
-                Num = "";
+                OutputBox.Text = Arith.InByUser.Remove(Arith.InByUser.Length - Arith.Num.Length);
+                Arith.InByUser = Arith.InByUser.Remove(Arith.InByUser.Length - Arith.Num.Length);
+                Arith.Num = "";
                 res = "";
                 Arith.res = "";
-                Arith.Num = "";
-                Arith.InByUser = InByUser;
             }
         }
 
@@ -232,33 +213,31 @@ namespace WindowsFormsApp1
         {
             OutputBox.Text = "0";
             res = "";
-            Num = "";
-            operation = "";
-            InByUser = "";
+            Arith.InByUser = "";
             PrevNum = "";
             Arith.Awtput = "";
-            Arith.InByUser = "";
             Arith.Num = "";
             Arith.operation = "";
             Arith.PrevNum = "";
             Arith.res = "";
+            Arith.prcnt = 0;
         }
 
         private void SqrRt_Click(object sender, EventArgs e)
         {
-            double sqrt = Math.Sqrt(double.Parse(Num));
+            double sqrt = Math.Sqrt(double.Parse(Arith.Num));
             OutputBox.Text = sqrt.ToString();
         }
 
         private void Sqr_Click(object sender, EventArgs e)
         {
-            double sqr = Math.Pow(double.Parse(Num), 2);
+            double sqr = Math.Pow(double.Parse(Arith.Num), 2);
             OutputBox.Text = sqr.ToString();
         }
 
         private void OneOver_Click(object sender, EventArgs e)
         {
-            double frctn = 1 / double.Parse(Num);
+            double frctn = 1 / double.Parse(Arith.Num);
             OutputBox.Text = frctn.ToString();
         }
 
@@ -269,9 +248,7 @@ namespace WindowsFormsApp1
             if (PrevNum.Equals(""))
             {
                 OutputBox.Text = "0";
-                Num = "";
                 Arith.Num = "";
-                InByUser = "";
                 Arith.InByUser = "";
             }
             else
@@ -280,7 +257,7 @@ namespace WindowsFormsApp1
                 res = Arith.ress.ToString();
                 ress = Arith.ress;
                 prcntVal = Arith.prcnt.ToString();
-                OutputBox.Text = PrevNum + operation + prcntVal + "\n" + ress;
+                OutputBox.Text = PrevNum + Arith.operation + prcntVal + "\n" + ress;
             }
         }
 
@@ -291,8 +268,8 @@ namespace WindowsFormsApp1
             MemoryLister.Enabled = true;
             MemFunc.MemorySave();
             MemSave_Clck = true;
-            Num = "";
-            InByUser = "";
+            Arith.Num = "";
+            Arith.InByUser = "";
         }
 
         private void MemoryLister_Click(object sender, EventArgs e)
@@ -305,9 +282,9 @@ namespace WindowsFormsApp1
             else
             {
                 MemoryList.Visible = true;
-                for (int i = 0; i < Memoria.Count; i++)
+                for (int i = 0; i < MemFunc.Memoria.Count; i++)
                 {
-                    MemoryList.Items.Add(Memoria[i]);
+                    MemoryList.Items.Add(MemFunc.Memoria[i]);
                 }
             }
         }
@@ -322,75 +299,9 @@ namespace WindowsFormsApp1
         {
             MemoryLister.Enabled = true;
             Button button = (Button)sender;
-            if (!ress.Equals(0))
-            {
-                if (button.Text.Equals("M+"))
-                {
-                    Memoria.Insert(0, Memoria.First() + ress);
-                    Memoria.RemoveAt(1);
-                }
-                else
-                {
-                    Memoria.Insert(0, Memoria.First() - ress);
-                    Memoria.RemoveAt(1);
-                }
-            }
-            else if (!res.Equals(""))
-            {
-                if (button.Text.Equals("M+"))
-                {
-                    Memoria.Insert(0, Memoria.First() + double.Parse(res));
-                    Memoria.RemoveAt(1);
-                }
-                else
-                {
-                    Memoria.Insert(0, Memoria.First() - double.Parse(res));
-                    Memoria.RemoveAt(1);
-                }
-            }
-            else if (!OutputBox.Text.Equals(""))
-            {
-                bool isNumber = int.TryParse(OutputBox.Text, out _);
-                if (isNumber)
-                {
-                    if (Memoria.Count == 0)
-                    {
-                        if (button.Text.Equals("M+"))
-                        {
-                            Memoria.Insert(0, double.Parse(OutputBox.Text));
-                        }
-                        else
-                        {
-                            Memoria.Insert(0, double.Parse(OutputBox.Text));
-                        }
-                    }
-                    else
-                    {
-                        if (button.Text.Equals("M+"))
-                        {
-                            Memoria.Insert(0, Memoria.First() + double.Parse(OutputBox.Text));
-                            Memoria.RemoveAt(1);
-                        }
-                        else
-                        {
-                            Memoria.Insert(0, Memoria.First() - double.Parse(OutputBox.Text));
-                            Memoria.RemoveAt(1);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (Memoria.Count == 0)
-                {
-                    Memoria.Insert(0, 0);
-                }
-                else
-                {
-                    Memoria.Insert(0, 0);
-                    Memoria.RemoveAt(1);
-                }
-            }
+            MemFunc.BtnTxt = button.Text;
+            MemFunc.Awtput = OutputBox.Text;
+            MemFunc.AddSub();
         }
 
         private void MemCall_DoubleClick(object sender, EventArgs e)
@@ -400,12 +311,12 @@ namespace WindowsFormsApp1
 
         private void MemoryRecall_Click(object sender, EventArgs e)
         {
-            OutputBox.Text = Memoria.First().ToString();
+            OutputBox.Text = MemFunc.Memoria.First().ToString();
         }
 
         private void MemoryClear_Click(object sender, EventArgs e)
         {
-            Memoria.Clear();
+            MemFunc.Memoria.Clear();
         }
     }
 }
