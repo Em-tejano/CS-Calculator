@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
         public string Num = "";
         public string InByUser = "";
         public string Awtput = "";
+        public double ress, prcnt = 0;
 
 
         //for a result of two numbers
@@ -140,6 +141,122 @@ namespace WindowsFormsApp1
             else
             {
                 operation = "+";
+            }
+        }
+
+        //percentage
+
+        public void PercentClick()
+        {
+            if (Num.Equals(""))
+            {
+                if (prcnt.Equals(0))
+                {
+                    prcnt = ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / prcnt;
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * prcnt;
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + prcnt;
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - prcnt;
+                    }
+                }
+                else
+                {
+                    prcnt = ((double.Parse(PrevNum) * prcnt) / 100);
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / prcnt;
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * prcnt;
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + prcnt;
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - prcnt;
+                    }
+                }
+                
+            }
+            else
+            {
+                if (prcnt.Equals(0))
+                {
+
+                    prcnt = ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / prcnt;
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * prcnt;
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + prcnt;
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - prcnt;
+                    }
+                }
+                else
+                {
+                    prcnt = ((double.Parse(PrevNum) * prcnt) / 100);
+                    if (operation == "÷")
+                    {
+                        ress = double.Parse(PrevNum) / prcnt;
+                    }
+                    else if (operation == "x")
+                    {
+                        ress = double.Parse(PrevNum) * prcnt;
+                    }
+                    else if (operation == "+")
+                    {
+                        ress = double.Parse(PrevNum) + prcnt;
+                    }
+                    else
+                    {
+                        ress = double.Parse(PrevNum) - prcnt;
+                    }
+                }
+            }
+        }
+
+        //continuous clicking of equal when perecentage is present
+
+        public void PercentEqual()
+        {
+            if (operation == "÷")
+            {
+                ress /= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+            }
+            else if (operation == "x")
+            {
+                ress *= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+            }
+            else if (operation == "+")
+            {
+                ress += ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
+            }
+            else
+            {
+                ress -= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
             }
         }
     }

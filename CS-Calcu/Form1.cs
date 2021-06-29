@@ -178,7 +178,9 @@ namespace WindowsFormsApp1
             PrevOp = operation;
             OutputBox.Text = InByUser + "\n" + res;
             Num = "";
+            Arith.Num = "";
             Arith.PrevNum = PrevNum;
+            Arith.InByUser = InByUser;
         }
 
         //codes for equal button
@@ -195,24 +197,9 @@ namespace WindowsFormsApp1
             }
             if (!ress.Equals(0))
             {
-                if (operation == "÷")
-                {
-                    ress /= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                }
-                else if (operation == "x")
-                {
-                    ress *= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                }
-                else if (operation == "+")
-                {
-                    ress += ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                }
-                else
-                {
-                    ress -= ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                }
-                ress = Math.Round(ress, 2);
-                OutputBox.Text = ress.ToString();
+                Arith.PercentEqual();
+                Arith.ress = Math.Round(Arith.ress, 2);
+                OutputBox.Text = Arith.ress.ToString();
             }
             else
             {
@@ -233,6 +220,9 @@ namespace WindowsFormsApp1
                 InByUser = InByUser.Remove(InByUser.Length - Num.Length);
                 Num = "";
                 res = "";
+                Arith.res = "";
+                Arith.Num = "";
+                Arith.InByUser = InByUser;
             }
         }
 
@@ -246,6 +236,12 @@ namespace WindowsFormsApp1
             operation = "";
             InByUser = "";
             PrevNum = "";
+            Arith.Awtput = "";
+            Arith.InByUser = "";
+            Arith.Num = "";
+            Arith.operation = "";
+            Arith.PrevNum = "";
+            Arith.res = "";
         }
 
         private void SqrRt_Click(object sender, EventArgs e)
@@ -268,52 +264,23 @@ namespace WindowsFormsApp1
 
         private void Percent_Click(object sender, EventArgs e)
         {
+            string prcntVal = "";
+
             if (PrevNum.Equals(""))
             {
                 OutputBox.Text = "0";
+                Num = "";
+                Arith.Num = "";
+                InByUser = "";
+                Arith.InByUser = "";
             }
             else
             {
-                if (Num.Equals(""))
-                {
-                    if (operation == "÷")
-                    {
-                        ress = double.Parse(PrevNum) / ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                    }
-                    else if (operation == "x")
-                    {
-                        ress = double.Parse(PrevNum) * ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                    }
-                    else if (operation == "+")
-                    {
-                        ress = double.Parse(PrevNum) + ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                    }
-                    else
-                    {
-                        ress = double.Parse(PrevNum) - ((double.Parse(PrevNum) * double.Parse(PrevNum)) / 100);
-                    }
-                }
-                else
-                {
-                    if (operation == "÷")
-                    {
-                        ress = double.Parse(PrevNum) / ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
-                    }
-                    else if (operation == "x")
-                    {
-                        ress = double.Parse(PrevNum) * ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
-                    }
-                    else if (operation == "+")
-                    {
-                        ress = double.Parse(PrevNum) + ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
-                    }
-                    else
-                    {
-                        ress = double.Parse(PrevNum) - ((double.Parse(PrevNum) * double.Parse(Num)) / 100);
-                    }
-                }
-                res = ress.ToString();
-                OutputBox.Text = res;
+                Arith.PercentClick();
+                res = Arith.ress.ToString();
+                ress = Arith.ress;
+                prcntVal = Arith.prcnt.ToString();
+                OutputBox.Text = PrevNum + operation + prcntVal + "\n" + ress;
             }
         }
 
