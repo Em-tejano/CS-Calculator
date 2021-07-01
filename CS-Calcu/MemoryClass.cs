@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         string res = "";
         public string Awtput = "", BtnTxt = "";
         public string Num = "";
+        public List<string> Hist = new List<string>();
 
         public void MemorySave()
         {
@@ -113,6 +114,11 @@ namespace WindowsFormsApp1
                     Memoria.RemoveAt(1);
                 }
             }
+        }
+
+        public void History()
+        {
+
         }
     }
 }

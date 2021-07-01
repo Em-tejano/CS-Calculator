@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         ArithmeticClass Arith = new ArithmeticClass();
         MemoryClass MemFunc = new MemoryClass();
         bool MemSave1_Clck = true;
+        MenuClass menuClass = new MenuClass();
 
         public Calculatr()
         {
@@ -176,24 +177,25 @@ namespace WindowsFormsApp1
             if (res.Length > 0)
             {
                 OutputBox.Text = res;
+                MemFunc.Hist.Insert(0, Arith.InByUser + "=" + "\n" + res);
             }
-            else
+            else if (res.Length == 0 && ress.Equals(0))
             {
                 Arith.Rees();
+                MemFunc.Hist.Insert(0, Arith.InByUser + "=" + "\n" + res);
             }
-            if (!ress.Equals(0))
+            else if (!ress.Equals(0))
             {
                 Arith.PercentEqual();
                 Arith.ress = Math.Round(Arith.ress, 2);
                 OutputBox.Text = Arith.ress.ToString();
-            }
-            else
-            {
-                Arith.operation = "";
-                Arith.Num = "";
-                PrevNum = "";
+                MemFunc.Hist.Insert(0, PrevNum + Arith.operation + Arith.prcnt.ToString() + "=" + "\n" + ress);
             }
             Arith.InByUser = "";
+            Arith.operation = "";
+            Arith.Num = "";
+            PrevNum = "";
+
         }
 
         //codes for clear entry button
@@ -250,14 +252,23 @@ namespace WindowsFormsApp1
 
             if (PrevNum.Equals(""))
             {
-                OutputBox.Text = "0";
-                Arith.Num = "";
-                Arith.InByUser = "";
+                if (!Arith.operation.Equals(""))
+                {
+                    OutputBox.Text = "0";
+                    Arith.Num = "";
+                    Arith.InByUser = "";
+                }
+                else
+                {
+                    OutputBox.Text = (double.Parse(Arith.Num) / 100).ToString();
+                    Arith.Num = "";
+                    Arith.InByUser = "";
+                }
             }
             else
             {
                 Arith.PercentClick();
-                res = Arith.ress.ToString();
+                //res = Arith.ress.ToString();
                 ress = Arith.ress;
                 prcntVal = Arith.prcnt.ToString();
                 OutputBox.Text = PrevNum + Arith.operation + prcntVal + "\n" + ress;
@@ -326,6 +337,56 @@ namespace WindowsFormsApp1
         private void MemoryClear_Click(object sender, EventArgs e)
         {
             MemFunc.Memoria.Clear();
+        }
+
+        private void MenuBtn_Click(object sender, EventArgs e)
+        {
+            if (MenuPane.Visible)
+            {
+                MenuPane.Visible = false;
+            }
+            else
+            {
+                MenuPane.Visible = true;
+            }
+        }
+
+        private void MenuPane_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            menuClass.name = e.Node.Text;
+            menuClass.Menu();
+            ModeName.Text = menuClass.ModeDis;
+            MenuPane.Visible = false;
+        }
+
+        private void History_Click(object sender, EventArgs e)
+        {
+            if (HistoryBox.Visible)
+            {
+                HistoryBox.Visible = false;
+                HistoryBox.Items.Clear();
+            }
+            else
+            {
+                HistoryBox.Visible = true;
+            }
+            for (int i = 0; i < MemFunc.Hist.Count; i++)
+            {
+                HistoryBox.Items.Add(MemFunc.Hist[i]);
+            }
+        }
+
+        private void HistoryBox_MouseLeave(object sender, EventArgs e)
+        {
+            HistoryBox.Items.Clear();
+            HistoryBox.Visible = false;
+        }
+
+        private void Hist_DoubleClick(object sender, EventArgs e)
+        {
+            OutputBox.Text = HistoryBox.SelectedItem.ToString();
+            HistoryBox.Items.Clear();
+            HistoryBox.Visible = false;
         }
     }
 }

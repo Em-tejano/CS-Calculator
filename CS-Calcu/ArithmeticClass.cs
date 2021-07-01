@@ -45,7 +45,14 @@ namespace WindowsFormsApp1
         {
             if (operation == "÷")
             {
-                res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
+                if (Num.Equals("0"))
+                {
+                    res = "Cannot divide by zero";
+                }
+                else
+                {
+                    res = (Double.Parse(PrevNum) / Double.Parse(Num)).ToString();
+                }
             }
 
             else
