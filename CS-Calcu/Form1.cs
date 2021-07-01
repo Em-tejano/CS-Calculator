@@ -118,8 +118,8 @@ namespace WindowsFormsApp1
 
             else
             {
-                OutputBox.Text = OutputBox.Text.Insert(OutputBox.Text.Length - Arith.Num.Length, "-");
                 Arith.InByUser = Arith.InByUser.Insert(Arith.InByUser.Length - Arith.Num.Length, "-");
+                OutputBox.Text = Arith.InByUser;
                 Arith.Num = "-" + Arith.Num;
             }
         }

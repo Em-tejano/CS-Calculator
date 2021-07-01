@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
                     res = (Double.Parse(PrevNum) + Double.Parse(Num)).ToString();
                 }
 
-                else
+                else if (operation == "-")
                 {
                     res = (Double.Parse(PrevNum) - Double.Parse(Num)).ToString();
                 }
