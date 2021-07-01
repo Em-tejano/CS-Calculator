@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
         public List<double> Memoria = new List<double>();
         string res = "";
         public string Awtput = "", BtnTxt = "";
-        public string Num;
+        public string Num = "";
 
         public void MemorySave()
         {

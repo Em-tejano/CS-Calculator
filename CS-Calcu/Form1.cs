@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         bool MemSave_Clck = false;
         ArithmeticClass Arith = new ArithmeticClass();
         MemoryClass MemFunc = new MemoryClass();
+        bool MemSave1_Clck = true;
 
         public Calculatr()
         {
@@ -37,6 +38,7 @@ namespace WindowsFormsApp1
             Button button = (Button)sender;
             Arith.Num += button.Text;
             Arith.InByUser += button.Text;
+            MemFunc.Num += button.Text;
             res = "";
             Arith.res = res;
             Arith.CntnsInput();
@@ -45,8 +47,9 @@ namespace WindowsFormsApp1
 
             if (MemSave_Clck)
             {
-                OutputBox.Text = Arith.Num;
+                OutputBox.Text = Arith.InByUser;
                 MemSave_Clck = false;
+                MemSave1_Clck = false;
             }
         }
 
@@ -266,10 +269,16 @@ namespace WindowsFormsApp1
             MemoryClear.Enabled = true;
             MemoryRecall.Enabled = true;
             MemoryLister.Enabled = true;
+            MemFunc.Awtput = OutputBox.Text;
             MemFunc.MemorySave();
             MemSave_Clck = true;
             Arith.Num = "";
-            Arith.InByUser = "";
+            if (!MemSave1_Clck)
+            {
+                Arith.InByUser = Arith.InByUser = MemFunc.Memoria[MemFunc.Memoria.Count - 1].ToString() + Arith.operation;
+                MemSave1_Clck = true;
+            }
+            MemFunc.Num = "";
         }
 
         private void MemoryLister_Click(object sender, EventArgs e)
